@@ -17,6 +17,7 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customer = Customer::findOrFail($id);
+        $customer->load('documents');
         return response()->json($customer, 200);
     }
 
@@ -43,6 +44,7 @@ class CustomerController extends Controller
         }
 
         $customer = Customer::create($validator->validated());
+
 
         return response()->json($customer, 201);
     }

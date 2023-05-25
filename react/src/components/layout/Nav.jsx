@@ -8,18 +8,22 @@ export const Nav = () => {
       const token = localStorage.getItem('Token');
 
       // Realizar solicitud de logout a la API
-      const response = await axios.post('http://localhost:8000/api/logout', null, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.post(
+        'http://localhost:8000/api/logout',
+        null,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       // Eliminar los valores del localStorage
       localStorage.removeItem('STATE_KEY');
       localStorage.removeItem('Token');
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('username');
-      
+
       window.location.reload();
       // Redireccionar o realizar cualquier otra acción después del logout
       // ...

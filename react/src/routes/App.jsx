@@ -8,6 +8,7 @@ import { Products } from '../containers/productos/Products';
 import { CreateDocument } from '../containers/CreateDocument/CreateDocument';
 import { AuthContext } from '../context/AppContext';
 import { UseAuth } from '../hooks/UseAuth';
+import { Customers } from '../containers/customers/Customers';
 
 export const App = () => {
   const initialState = useInitialState();
@@ -47,6 +48,11 @@ export const App = () => {
                   exact
                   path="/aplicacion/creardocumento"
                   component={CreateDocument}
+                />
+                <PrivateRoute
+                  exact
+                  path="/aplicacion/misclientes"
+                  component={Customers}
                 />
               </AppContext.Provider>
             </Layout>

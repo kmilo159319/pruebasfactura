@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\salesDocument;
 
 class customer extends Model
 {
@@ -25,4 +26,11 @@ protected $hidden = [
     'created_at',
     'updated_at'
 ];
+
+
+public function documents()
+{
+    return $this->hasMany(salesDocument::class,'id_customer','id');
+}
+
 }

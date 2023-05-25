@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import initialState from '../initialState';
-import { getCustumer, getData, getUserInfo } from './api';
+import { getCustumer, getData, deleteCustomer } from './api';
 
 export const useInitialState = () => {
   const [Products, setProducts] = useState([]);
@@ -117,6 +117,7 @@ export const useInitialState = () => {
     addTocustomer,
     addNewOrder,
     setProducts,
+    deleteCustomer,
     Products,
     state,
   };
